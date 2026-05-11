@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "ES6",
     "module": "ESNext",
-    "outDir": "./dist/js", // Compiled JS files go here
+    "outDir": "./src/dist/js", // Compiled JS files go here
     "rootDir": "./src/ts", // TS source files
     "strict": true,
     "esModuleInterop": true,
