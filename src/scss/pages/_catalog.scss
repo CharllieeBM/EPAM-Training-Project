@@ -1,0 +1,494 @@
+// =============================================================
+// _catalog.scss — Catalog page styles
+// =============================================================
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+// Tighten the page banner for catalog page
+.page-banner {
+  padding-top: 32px;
+  padding-bottom: 16px;
+}
+
+// ---- TOOLBAR: count + sort + search on one row ----
+.catalog__toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  gap: v.$spacing-md;
+  flex-wrap: wrap;
+
+  @include m.mobile {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: v.$spacing-sm;
+  }
+}
+
+.catalog__count {
+  font-family: v.$font-primary;
+  font-size: 16px;
+  font-weight: 400;
+  color: v.$color-grey-dark;
+}
+
+.catalog__toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  position: relative;
+
+  @include m.mobile {
+    gap: v.$spacing-sm;
+    width: 100%;
+  }
+}
+
+// Funnel icon button — mobile sort trigger
+.catalog__sort-btn {
+  display: none;
+
+  @include m.mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 35px;
+    flex-shrink: 0;
+    background: v.$color-white;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    color: v.$color-grey-dark;
+
+    &:hover {
+      border-color: v.$color-primary;
+      color: v.$color-primary;
+    }
+  }
+}
+
+// Sort dropdown — 202×40px from Figma
+.catalog__sort-select {
+  width: 202px;
+  height: 35px;
+  padding: 0 v.$spacing-md;
+  border: 1px solid #ddd;
+  font-family: v.$font-primary;
+  font-size: 16px;
+  font-weight: 400;
+  color: v.$color-grey-dark;
+  background: v.$color-white;
+  cursor: pointer;
+
+  @include m.mobile {
+    display: none;
+  }
+
+  &:focus {
+    outline: 2px solid v.$color-primary;
+    border-color: v.$color-primary;
+  }
+}
+
+// Search form — 341×40px from Figma
+.catalog__search-form {
+  display: flex;
+  align-items: center;
+  width: 245px;
+  height: 35px;
+  border: 1px solid #ddd;
+  background: v.$color-white;
+  flex-shrink: 0;
+  overflow: hidden;
+
+  @include m.mobile {
+    flex: 1;
+    width: auto;
+  }
+
+  &:focus-within {
+    border-color: v.$color-primary;
+  }
+}
+
+.catalog__search-input {
+  flex: 1;
+  height: 100%;
+  border: none;
+  padding: 0 v.$spacing-md;
+  font-family: v.$font-primary;
+  font-size: 16px;
+  font-weight: 400;
+  color: v.$color-grey-dark;
+  background: transparent;
+  outline: none;
+
+  &::placeholder {
+    color: v.$color-grey-dark;
+  }
+}
+
+.catalog__search-btn {
+  width: 40px;
+  height: 40px;
+  min-width: 30px; // ← ADD THIS
+  flex-shrink: 0;
+  background: none;
+  border: none;
+
+  /* border-left: 1px solid #ddd; // ← ADD THIS — gives it a nice separator */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: v.$color-grey;
+  padding: 0 10px;
+
+  &:hover {
+    color: v.$color-primary;
+  }
+}
+
+// "Product not found" popup
+.catalog__search-notfound {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: v.$color-error;
+  color: v.$color-white;
+  padding: v.$spacing-sm v.$spacing-md;
+  font-size: v.$font-size-sm;
+  font-weight: 600;
+  z-index: 50;
+  white-space: nowrap;
+  box-shadow: v.$shadow-sm;
+}
+
+// ---- MAIN LAYOUT: left (filters+grid) | right (sets) ----
+.catalog__main.section {
+  padding-top: 24px;
+}
+
+.catalog__layout {
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  gap: 40px;
+  align-items: start;
+
+  @include m.tablet {
+    grid-template-columns: 1fr;
+  }
+
+  @include m.mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+// ---- FILTER BAR (horizontal dropdowns above grid) ----
+.catalog__filters {
+  display: flex;
+  align-items: center;
+  gap: v.$spacing-sm;
+  flex-wrap: wrap;
+  margin-bottom: v.$spacing-lg;
+
+  @include m.mobile {
+    gap: 6px;
+  }
+}
+
+.catalog__reset-btn {
+  font-family: v.$font-primary;
+  font-size: v.$font-size-sm;
+  font-weight: 600;
+  color: v.$color-primary;
+  background: none;
+  border: 1px solid v.$color-primary;
+  padding: 6px 16px;
+  cursor: pointer;
+  transition: all v.$transition-fast;
+  height: 36px;
+
+  &:hover {
+    background: v.$color-primary;
+    color: v.$color-white;
+  }
+}
+
+// Filter group — each is a dropdown pill
+.filter-group {
+  position: relative;
+
+  &__toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: v.$font-primary;
+    font-size: v.$font-size-sm;
+    font-weight: 600;
+    color: v.$color-black;
+    background: v.$color-white;
+    border: 1px solid #ddd;
+    padding: 6px 10px;
+    height: 36px;
+    cursor: pointer;
+    transition: border-color v.$transition-fast;
+    white-space: nowrap;
+
+    @include m.mobile {
+      font-size: 13px;
+      padding: 6px 8px;
+    }
+
+    &:hover,
+    &[aria-expanded="true"] {
+      border-color: v.$color-primary;
+      color: v.$color-primary;
+    }
+
+    svg {
+      transition: transform v.$transition-fast;
+    }
+
+    &[aria-expanded="true"] svg {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__options {
+    display: none;
+    flex-direction: column;
+    gap: v.$spacing-xs;
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    min-width: 160px;
+    background: v.$color-white;
+    border: 1px solid #ddd;
+    padding: v.$spacing-sm v.$spacing-md;
+    z-index: 100;
+    box-shadow: v.$shadow-sm;
+
+    &.open {
+      display: flex;
+    }
+
+    label {
+      display: flex;
+      align-items: center;
+      gap: v.$spacing-sm;
+      font-size: v.$font-size-sm;
+      cursor: pointer;
+      padding: 4px 0;
+      white-space: nowrap;
+
+      &:hover {
+        color: v.$color-primary;
+      }
+
+      // 🆕 Active filter highlight
+      &.active {
+        color: v.$color-primary;
+        font-weight: 700;
+      }
+    }
+
+    input[type="checkbox"] {
+      accent-color: v.$color-primary;
+      width: 15px;
+      height: 15px;
+    }
+  }
+}
+
+// ---- PRODUCT GRID — 3 columns for catalog ----
+.products__grid--catalog {
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 11px;
+
+  @include m.tablet {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  @include m.mobile {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+// Override base grid for catalog — 3 columns
+#catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 11px;
+  margin-bottom: v.$spacing-lg;
+
+  @include m.tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include m.mobile {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+#catalog-grid .product-card__img-wrap {
+  height: 400px;
+
+  @include m.tablet {
+    height: 280px;
+  }
+
+  @include m.mobile {
+    height: 180px;
+  }
+}
+
+// ---- PAGINATION ----
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: v.$spacing-sm;
+  margin-top: v.$spacing-lg;
+  flex-wrap: wrap;
+}
+
+.pagination__pages {
+  display: flex;
+  gap: 4px;
+}
+
+// Page number buttons — 41×40px, Figma exact
+.pagination__btn {
+  min-width: 41px;
+  height: 40px;
+  padding: 0 v.$spacing-sm;
+  border-radius: 2px;
+  font-size: 15px;
+  font-weight: 500;
+  background-color: v.$color-white;
+  border: none; // no border by default (non-active pages)
+  color: v.$color-black;
+  cursor: pointer;
+  transition: all v.$transition-fast;
+
+  &:hover {
+    color: v.$color-primary;
+  }
+
+  // Active page — pink bg, white text
+  &.active {
+    background-color: v.$color-primary;
+    color: v.$color-white;
+    border: none;
+  }
+}
+
+// Prev / Next buttons — border: 2px #B92770, black text, white bg
+.pagination__btn--prev,
+.pagination__btn--next {
+  background: v.$color-white;
+  border: 2px solid v.$color-primary !important;
+  border-radius: 2px;
+  color: v.$color-black;
+  font-weight: 700;
+  font-size: 11px;
+  min-width: auto;
+  padding: 0 14px;
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: default;
+  }
+
+  &:hover:not(:disabled) {
+    background: v.$color-primary;
+    color: v.$color-white;
+  }
+}
+
+// ---- TOP BEST SETS SIDEBAR ----
+.catalog__sets-sidebar {
+  position: sticky;
+  top: calc(v.$header-height + v.$spacing-md);
+
+  @include m.tablet {
+    display: none;
+  }
+
+  @include m.mobile {
+    display: none;
+  }
+}
+
+.catalog__sets-title {
+  font-family: v.$font-primary;
+  font-size: 17px;
+  font-weight: 700;
+  color: v.$color-black;
+  margin-bottom: v.$spacing-md;
+}
+
+.top-sets__list {
+  display: flex;
+  flex-direction: column;
+  gap: v.$spacing-md;
+  list-style: none;
+}
+
+.top-set-item {
+  display: flex;
+  align-items: flex-start;
+  gap: v.$spacing-sm;
+
+  &__img {
+    width: 87px;
+    height: 87px;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  &__info {
+    flex: 1;
+  }
+
+  &__name {
+    font-family: v.$font-primary;
+    font-size: 15px;
+    font-weight: 400;
+    color: v.$color-black;
+    line-height: 1.4;
+    margin-bottom: 4px;
+  }
+
+  &__stars {
+    color: #f5b423;
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+
+  &__price {
+    font-family: v.$font-primary;
+    font-size: 15px;
+    font-weight: 400;
+    color: v.$color-black;
+  }
+}
+
+// ---- CATALOG + YOU MAY ALSO LIKE — center aligned cards ----
+.products__grid .product-card__body {
+  text-align: center;
+
+  .product-card__btn {
+    margin: 0 auto;
+  }
+}
+
+.products__grid .product-card__name,
+.products__grid .product-card__rating,
+.products__grid .product-card__price {
+  text-align: center;
+  justify-content: center;
+}

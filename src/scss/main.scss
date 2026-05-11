@@ -1,0 +1,18 @@
+// =============================================================
+// main.scss — Entry point: imports all partials
+// =============================================================
+
+@use "abstracts/variables";
+@use "abstracts/mixins";
+@use "base/reset";
+@use "base/fonts";
+@use "components/buttons";
+@use "components/forms";
+@use "components/product-card";
+@use "layouts/header";
+@use "layouts/footer";
+@use "pages/about";
+@use "pages/cart";
+@use "pages/catalog";
+@use "pages/product-details";
+@use "pages/home";

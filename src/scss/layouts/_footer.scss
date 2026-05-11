@@ -1,0 +1,276 @@
+// =============================================================
+// _footer.scss
+// =============================================================
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.footer {
+  color: v.$color-black;
+  font-family: "Helvetica Neue", sans-serif;
+}
+
+// ── Benefits Bar ──────────────────────────────────────────────
+.footer__benefits {
+  background-color: #2e3130;
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+
+  @include m.tablet {
+    padding: v.$spacing-lg 0;
+  }
+
+  @include m.mobile {
+    min-height: auto;
+    padding: v.$spacing-lg 0;
+  }
+}
+
+.footer__benefits-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+
+  .footer__benefits-heading {
+    width: 100%;
+  }
+
+  @include m.tablet {
+    justify-content: center;
+    gap: v.$spacing-lg;
+
+    .footer__benefits-heading {
+      text-align: center;
+    }
+  }
+
+  @include m.mobile {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    gap: v.$spacing-md;
+  }
+}
+
+.footer__benefits-heading {
+  font-family: v.$font-primary;
+  font-size: 19px;
+  font-weight: 700;
+  color: v.$color-white;
+  flex-shrink: 0;
+  margin-bottom: 20px;
+  padding-top: 0;
+
+  @include m.tablet {
+    text-align: center;
+    width: 100%;
+  }
+
+  @include m.mobile {
+    text-align: center;
+    width: 100%;
+    margin-bottom: v.$spacing-sm;
+  }
+}
+
+.footer__benefit {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+
+  img {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+  }
+
+  p {
+    font-size: v.$font-size-sm;
+    color: v.$color-white;
+    line-height: 1.4;
+  }
+
+  @include m.tablet {
+    flex: 0 1 calc(50% - v.$spacing-lg);
+  }
+
+  @include m.mobile {
+    flex: none;
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+// ── Main Footer Area ──────────────────────────────────────────
+.footer__main {
+  background-color: v.$color-white;
+  padding: 48px 0;
+
+  @include m.tablet {
+    padding: v.$spacing-lg 0 v.$spacing-xl 0;
+  }
+
+  @include m.mobile {
+    padding: v.$spacing-md 0 v.$spacing-lg 0;
+  }
+}
+
+.footer__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1.8fr;
+  gap: 0 v.$spacing-lg;
+  margin-bottom: 48px;
+
+  .footer__shipping {
+    grid-column: 1 / -1;
+    padding-top: v.$spacing-lg;
+    border-top: 1px solid v.$color-grey-light;
+  }
+
+  @include m.tablet {
+    grid-template-columns: 1fr 1fr;
+    row-gap: v.$spacing-lg;
+    margin-bottom: 0;
+  }
+
+  @include m.mobile {
+    grid-template-columns: 1fr;
+    row-gap: v.$spacing-lg;
+    margin-bottom: v.$spacing-lg;
+  }
+}
+
+// ── Nav Columns ───────────────────────────────────────────────
+.footer__heading {
+  font-size: v.$font-size-base;
+  font-weight: 700;
+  color: v.$color-primary;
+  margin-bottom: v.$spacing-md;
+
+  @include m.mobile {
+    text-align: center;
+  }
+}
+
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: v.$spacing-sm;
+
+  @include m.mobile {
+    align-items: center;
+  }
+
+  a {
+    font-size: 15px;
+    font-weight: 400;
+    font-family: "Helvetica Neue", sans-serif;
+    color: v.$color-black;
+    transition: color v.$transition-fast;
+
+    &:hover {
+      color: v.$color-primary;
+    }
+  }
+}
+
+// ── Contact Column ────────────────────────────────────────────
+.footer__contact-desc {
+  font-size: 15px;
+  font-weight: 400;
+  font-family: "Helvetica Neue", sans-serif;
+  color: v.$color-black;
+  line-height: 1.5;
+  margin-bottom: v.$spacing-lg;
+
+  @include m.mobile {
+    text-align: center;
+  }
+}
+
+.footer__contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: v.$spacing-md;
+
+  @include m.mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+.footer__contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: v.$spacing-sm;
+
+  svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+    width: 18px;
+    height: 18px;
+    color: v.$color-primary;
+  }
+
+  span {
+    font-size: 15px;
+    font-weight: 400;
+    font-family: "Helvetica Neue", sans-serif;
+    color: v.$color-black;
+    line-height: 1.5;
+  }
+
+  @include m.mobile {
+    justify-content: center;
+  }
+}
+
+// ── Shipping Information ──────────────────────────────────────
+.footer__shipping {
+  max-width: 639px;
+  padding-top: v.$spacing-lg;
+  background-color: v.$color-white;
+
+  h4 {
+    font-size: v.$font-size-base;
+    font-weight: 700;
+    color: v.$color-primary;
+    margin-bottom: v.$spacing-sm;
+
+    @include m.mobile {
+      text-align: center;
+    }
+  }
+
+  p {
+    font-size: 15px;
+    font-weight: 400;
+    font-family: "Helvetica Neue", sans-serif;
+    color: v.$color-black;
+    line-height: 1.6;
+
+    @include m.mobile {
+      text-align: center;
+    }
+  }
+
+  @include m.mobile {
+    max-width: 100%;
+  }
+}
+
+// ── Bottom Bar ────────────────────────────────────────────────
+.footer__bottom {
+  background-color: v.$color-white;
+  border-top: 1px solid v.$color-grey-light;
+  padding: v.$spacing-md 0;
+  text-align: center;
+
+  p {
+    font-size: v.$font-size-xs;
+    color: v.$color-grey;
+  }
+}

@@ -1,0 +1,76 @@
+// =============================================================
+// _variables.scss — Global design tokens
+// =============================================================
+
+// Colors
+$color-primary: #b92770;
+$color-primary-dark: #9e1f5e;
+$color-black: #111;
+$color-white: #fff;
+$color-grey-light: #e7e8e9;
+$color-grey: #727174;
+$color-grey-dark: #504e4a;
+$color-success: #2e7d32;
+$color-error: #c62828;
+
+// Typography
+$font-primary: "Montserrat", "Helvetica Neue", sans-serif;
+$font-secondary: "Montserrat", "Helvetica Neue", sans-serif;
+$font-size-xs: 0.75rem;
+$font-size-sm: 0.875rem;
+$font-size-base: 1.0625rem;
+$font-size-md: 1.125rem;
+$font-size-lg: 1.5rem;
+$font-size-xl: 2rem;
+$font-size-2xl: 2.5rem;
+$font-size-3xl: 3.125rem;
+
+// Spacing
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 32px;
+$spacing-xl: 119px;
+$spacing-2xl: 96px;
+
+// Breakpoints
+$bp-mobile: 768px;
+$bp-tablet: 1024px;
+$bp-desktop: 1440px;
+
+// Layout
+$container-max: 1200px;
+$header-height: 138px;
+
+// Borders
+$radius-sm: 0;
+$radius-md: 0;
+$radius-lg: 0;
+$radius-full: 999px;
+
+// Shadows
+$shadow-sm: 0 2px 12px 0 rgb(0 0 0 / 6%);
+$shadow-md: 0 4px 20px 0 rgb(0 0 0 / 12%);
+$shadow-lg: 0 8px 32px rgb(0 0 0 / 18%);
+
+// Transitions
+$transition-fast: 0.15s ease;
+$transition-base: 0.25s ease;
+$transition-slow: 0.4s ease;
+
+// CSS Custom Properties
+:root {
+  --color-primary: #{$color-primary};
+  --color-primary-dark: #{$color-primary-dark};
+  --color-black: #{$color-black};
+  --color-white: #{$color-white};
+  --color-grey-light: #{$color-grey-light};
+  --color-grey: #{$color-grey};
+  --color-grey-dark: #{$color-grey-dark};
+  --color-success: #{$color-success};
+  --color-error: #{$color-error};
+  --header-height: #{$header-height};
+  --container-max: #{$container-max};
+  --spacing-md: #{$spacing-md};
+  --spacing-lg: #{$spacing-lg};
+}

@@ -1,0 +1,463 @@
+// =============================================================
+// _about.scss — About Us page styles
+// =============================================================
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+// =============================================================
+// ① HERO BANNER
+// Full-bleed image, 40% dark overlay, centred text
+// =============================================================
+.about-hero {
+  position: relative;
+  width: 100%;
+  height: 554px;
+  background-image: url("../../../src/assets/images/banner-image3.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include m.tablet {
+    height: 420px;
+  }
+
+  @include m.mobile {
+    height: 300px;
+  }
+}
+
+.about-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgb(0 0 0 / 40%);
+  z-index: 0;
+}
+
+.about-hero__content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 0 v.$spacing-md;
+}
+
+.about-hero__title {
+  font-family: v.$font-primary;
+  font-size: 50px;
+  font-weight: 700;
+  color: v.$color-white;
+  margin-bottom: v.$spacing-md;
+  line-height: 1.1;
+
+  @include m.tablet {
+    font-size: v.$font-size-2xl;
+  }
+
+  @include m.mobile {
+    font-size: v.$font-size-xl;
+  }
+}
+
+.about-hero__subtitle {
+  font-family: v.$font-primary;
+  font-size: v.$font-size-base; // 17px
+  font-weight: 400;
+  color: #e9e9ed;
+  line-height: 1.7;
+  text-align: center;
+}
+
+// =============================================================
+// ② FOUR FEATURE ICONS
+// 1100px row, evenly spaced, centre-aligned
+// =============================================================
+.about-features {
+  padding: 80px 0;
+  background: v.$color-white;
+
+  @include m.mobile {
+    padding: 40px 0;
+  }
+}
+
+.about-features__grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 v.$spacing-md;
+
+  @include m.tablet {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: v.$spacing-lg;
+  }
+
+  @include m.mobile {
+    flex-direction: column;
+    align-items: stretch;
+    gap: v.$spacing-lg;
+  }
+}
+
+.feature-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 260px;
+
+  @include m.tablet {
+    width: calc(50% - v.$spacing-lg);
+    max-width: none;
+  }
+
+  @include m.mobile {
+    width: 100%;
+    max-width: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0;
+
+    .feature-card__text {
+      width: 100%;
+    }
+  }
+}
+
+.feature-card__icon {
+  width: 62px;
+  height: 62px;
+  background-color: v.$color-primary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: v.$spacing-md;
+  flex-shrink: 0;
+  overflow: hidden;
+
+  img {
+    width: 62px;
+    height: 62px;
+    object-fit: contain;
+  }
+
+  // Awards and Shipping icons have a different background
+  &--plain {
+    background-color: transparent;
+  }
+
+  @include m.mobile {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: v.$spacing-sm;
+
+    img {
+      width: 48px;
+      height: 48px;
+    }
+  }
+}
+
+.feature-card__heading {
+  font-family: v.$font-primary;
+  font-size: 20px;
+  font-weight: 700;
+  color: v.$color-black;
+  margin-bottom: v.$spacing-sm;
+
+  @include m.mobile {
+    margin-bottom: 0;
+    font-size: 16px;
+  }
+}
+
+.feature-card__text {
+  font-family: v.$font-primary;
+  font-size: v.$font-size-base;
+  font-weight: 400;
+  color: v.$color-black;
+  line-height: 1.7;
+
+  @include m.mobile {
+    font-size: 14px;
+    margin-top: 0;
+  }
+}
+
+.feature-card__top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include m.mobile {
+    flex-direction: column;
+    align-items: center;
+    gap: v.$spacing-sm;
+    margin-bottom: 4px;
+    width: 100%;
+  }
+
+  .feature-card__heading {
+    flex: 1;
+    min-width: 0;
+  }
+}
+
+// =============================================================
+// ③ NEW ARRIVALS EVERY WEEK
+// Two-column flex: text left, image right. Max-width 1100px.
+// =============================================================
+.about-arrivals {
+  padding: 80px 0;
+  background: v.$color-white;
+
+  @include m.mobile {
+    padding: 40px 0;
+  }
+}
+
+.about-arrivals__inner {
+  display: flex;
+  align-items: center;
+  gap: v.$spacing-lg;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0;
+
+  @include m.tablet {
+    flex-direction: column;
+    padding: 0 v.$spacing-md;
+  }
+
+  @include m.mobile {
+    flex-direction: column;
+    padding: 0 v.$spacing-md;
+  }
+}
+
+.about-arrivals__content {
+  flex: 1 1 0;
+  min-width: 0;
+
+  @include m.tablet {
+    width: 100%;
+  }
+
+  @include m.mobile {
+    width: 100%;
+  }
+}
+
+.about-arrivals__title {
+  font-family: v.$font-primary;
+  font-size: 36px;
+  font-weight: 900;
+  color: v.$color-black;
+  margin-bottom: v.$spacing-lg;
+  line-height: 1.1;
+  text-align: left;
+
+  @include m.tablet {
+    font-size: v.$font-size-xl;
+    white-space: normal;
+  }
+
+  @include m.mobile {
+    font-size: v.$font-size-lg;
+    white-space: normal;
+  }
+}
+
+.about-arrivals__text {
+  font-family: v.$font-primary;
+  font-size: v.$font-size-base; // 17px
+  font-weight: 400;
+  color: v.$color-grey-dark; // #504E4A
+  line-height: 1.7;
+  margin-bottom: v.$spacing-md;
+
+  &:last-of-type {
+    margin-bottom: v.$spacing-lg;
+  }
+
+  @include m.mobile {
+    font-size: 14px;
+  }
+}
+
+.about-arrivals__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 61px;
+  font-family: v.$font-primary;
+  font-size: 18px;
+  font-weight: 700;
+
+  // Background and colour come from .btn--primary in _buttons.scss
+}
+
+.about-arrivals__image {
+  flex: 1;
+
+  img {
+    width: 100%;
+    height: 352px;
+    object-fit: cover;
+    display: block;
+
+    @include m.mobile {
+      height: auto;
+    }
+  }
+}
+
+// =============================================================
+// ④ OUR INCREDIBLE TEAM
+// 3-column grid, rectangular photos (NOT circular)
+// =============================================================
+.about-team {
+  padding: 80px 0;
+  background: v.$color-white;
+
+  @include m.mobile {
+    padding: 40px 0;
+  }
+}
+
+.about-team__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 v.$spacing-md;
+}
+
+.about-team__title {
+  font-family: v.$font-primary;
+  font-size: 40px;
+  font-weight: 900;
+  color: v.$color-black;
+  text-align: center;
+  margin-bottom: 60px;
+  line-height: 1.1;
+  text-decoration: underline;
+  text-decoration-color: v.$color-primary;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 8px;
+
+  @include m.tablet {
+    font-size: v.$font-size-xl;
+    margin-bottom: v.$spacing-lg;
+  }
+
+  @include m.mobile {
+    font-size: v.$font-size-lg;
+  }
+}
+
+.team__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+
+  @include m.tablet {
+    grid-template-columns: repeat(3, 1fr);
+    gap: v.$spacing-md;
+  }
+
+  @include m.mobile {
+    grid-template-columns: 1fr;
+    gap: v.$spacing-lg;
+  }
+}
+
+.team-card {
+  text-align: center;
+}
+
+.team-card__img {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+  margin-bottom: 24px;
+
+  @include m.tablet {
+    height: 220px;
+  }
+}
+
+.team-card__name {
+  font-family: v.$font-primary;
+  font-size: 22px;
+  font-weight: 700;
+  color: v.$color-black;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.team-card__role {
+  font-family: v.$font-primary;
+  font-size: v.$font-size-base;
+  font-weight: 400;
+  color: v.$color-black;
+}
+
+// =============================================================
+// ⑤ OFFER OF THE MONTH — about page additions only
+// The base .offer-banner styles live in _home.scss.
+// We only add what is NEW here: the percent-wrap and extra text.
+// =============================================================
+
+// Wraps the "50%" and the new subtitle line so they stack vertically
+.offer-banner__percent-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-shrink: 0;
+
+  @include m.mobile {
+    align-items: center;
+  }
+}
+
+// visually-hidden utility (accessible h2 for screen readers)
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.about-page .offer-banner {
+  padding-bottom: 90px;
+}
+
+// Contact page hero — swaps the background image
+.about-hero--contact {
+  background-image: url("../../../src/assets/images/banner-image2.jpg");
+}
+
+// Cart page hero — uses bannerimage.jpg, shorter height to match Figma
+.about-hero--cart {
+  background-image: url("../../../src/assets/images/banner-image.jpg");
+  height: 229px;
+
+  .about-hero__overlay {
+    background: rgb(0 0 0 / 50%);
+  }
+}

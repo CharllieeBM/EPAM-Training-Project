@@ -1,0 +1,364 @@
+{
+  "data": [
+    {
+      "id": "SU001",
+      "name": "Global Explorer Max Comfort Suitcase Pro",
+      "price": 250,
+      "imageUrl": "suitcase-red.png",
+      "category": "suitcases",
+      "color": "red",
+      "size": "M",
+      "salesStatus": true,
+      "rating": 4.5,
+      "popularity": 90,
+      "blocks": ["New Products Arrival", "Selected Products"],
+      "thumbnails": [
+        "suitcase-small-2.png",
+        "suitcase-small-card-1.png",
+        "yellow-open1.png"
+      ]
+    },
+    {
+      "id": "SU002",
+      "name": "Luxury Lightweight Travel Suitcase",
+      "price": 280,
+      "imageUrl": "suitcase-blue.png",
+      "category": "suitcases",
+      "color": "blue",
+      "size": "L",
+      "salesStatus": true,
+      "rating": 4.0,
+      "popularity": 85,
+      "blocks": ["You May Also Like"],
+      "thumbnails": [
+        "suitcase-small-2.png",
+        "suitcase-small-card-1.png",
+        "yellow-open1.png"
+      ]
+    },
+    {
+      "id": "SU003",
+      "name": "Urban Compact Travel Suitcase",
+      "price": 310,
+      "imageUrl": "suitcase-grey.png",
+      "category": "suitcases",
+      "color": "grey",
+      "size": "XL",
+      "salesStatus": true,
+      "rating": 4.7,
+      "popularity": 95,
+      "blocks": ["New Products Arrival"],
+      "thumbnails": [
+        "suitcase-small-2.png",
+        "suitcase-small-card-1.png",
+        "yellow-open1.png"
+      ]
+    },
+    {
+      "id": "SU004",
+      "name": "Traveller's Comfort Weekender Suitcase",
+      "price": 240,
+      "imageUrl": "suitcase-green-1.png",
+      "category": "suitcases",
+      "color": "green",
+      "size": "S",
+      "salesStatus": true,
+      "rating": 4.2,
+      "popularity": 88,
+      "blocks": ["Selected Products"],
+      "thumbnails": [
+        "suitcase-small-2.png",
+        "suitcase-small-card-1.png",
+        "yellow-open1.png"
+      ]
+    },
+    {
+      "id": "SU005",
+      "name": "Explorer Pro Durable Suitcase",
+      "price": 270,
+      "imageUrl": "suitcase-black.png",
+      "category": "suitcases",
+      "color": "black",
+      "size": "M",
+      "salesStatus": false,
+      "rating": 4.0,
+      "popularity": 70,
+      "blocks": [],
+      "thumbnails": [
+        "suitcase-small-2.png",
+        "suitcase-small-card-1.png",
+        "yellow-open1.png"
+      ]
+    },
+    {
+      "id": "SU006",
+      "name": "Deluxe Weekender Travel Suitcase",
+      "price": 295,
+      "imageUrl": "suitcase-blue-1.png",
+      "category": "suitcases",
+      "color": "blue",
+      "size": "L",
+      "salesStatus": true,
+      "rating": 4.8,
+      "popularity": 80,
+      "blocks": ["You May Also Like"],
+      "thumbnails": [
+        "suitcase-small-2.png",
+        "suitcase-small-card-1.png",
+        "yellow-open1.png"
+      ]
+    },
+    {
+      "id": "SU007",
+      "name": "Compact Lightweight Traveller's Suitcase",
+      "price": 260,
+      "imageUrl": "suitcase-hand-grey.png",
+      "category": "suitcases",
+      "color": "grey",
+      "size": "S",
+      "salesStatus": false,
+      "rating": 3.5,
+      "popularity": 72,
+      "blocks": [],
+      "thumbnails": [
+        "suitcase-small-2.png",
+        "suitcase-small-card-1.png",
+        "yellow-open1.png"
+      ]
+    },
+    {
+      "id": "SU008",
+      "name": "Explorer Max Expandable Suitcase",
+      "price": 320,
+      "imageUrl": "suitcase-red-1.png",
+      "category": "suitcases",
+      "color": "red",
+      "size": "XL",
+      "salesStatus": true,
+      "rating": 4.5,
+      "popularity": 89,
+      "blocks": ["Selected Products"],
+      "thumbnails": [
+        "suitcase-small-2.png",
+        "suitcase-small-card-1.png",
+        "yellow-open1.png"
+      ]
+    },
+    {
+      "id": "SU009",
+      "name": "Luxury Durable Compact Suitcase",
+      "price": 255,
+      "imageUrl": "suitcase-small-2.png",
+      "category": "suitcases",
+      "color": "beige",
+      "size": "M",
+      "salesStatus": false,
+      "rating": 3.5,
+      "popularity": 78,
+      "blocks": [],
+      "thumbnails": [
+        "suitcase-small-2.png",
+        "suitcase-small-card-1.png",
+        "yellow-open1.png"
+      ]
+    },
+    {
+      "id": "SU010",
+      "name": "Global Compact Suitcase",
+      "price": 280,
+      "imageUrl": "suitcase_blue.png",
+      "category": "suitcases",
+      "color": "blue",
+      "size": "M",
+      "salesStatus": true,
+      "rating": 4.0,
+      "popularity": 75,
+      "blocks": ["New Products Arrival"],
+      "thumbnails": [
+        "suitcase-small-2.png",
+        "suitcase-small-card-1.png",
+        "yellow-open1.png"
+      ]
+    },
+    {
+      "id": "SU011",
+      "name": "Traveller's Elite Rolling Suitcase",
+      "price": 300,
+      "imageUrl": "suitcase-small-4.png",
+      "category": "suitcases",
+      "color": "yellow",
+      "size": "L",
+      "salesStatus": false,
+      "rating": 4.5,
+      "popularity": 82,
+      "blocks": [],
+      "thumbnails": [
+        "suitcase-small-2.png",
+        "suitcase-small-card-1.png",
+        "yellow-open1.png"
+      ]
+    },
+    {
+      "id": "SU012",
+      "name": "Urban Max Durable Suitcase Pro",
+      "price": 325,
+      "imageUrl": "suitcase-pink.png",
+      "category": "suitcases",
+      "color": "pink",
+      "size": "XL",
+      "salesStatus": true,
+      "rating": 4.8,
+      "popularity": 88,
+      "blocks": ["You May Also Like"],
+      "thumbnails": [
+        "suitcase-small-2.png",
+        "suitcase-small-card-1.png",
+        "yellow-open1.png"
+      ]
+    },
+    {
+      "id": "KL013",
+      "name": "Explorer Kids' Lightweight Luggage",
+      "price": 230,
+      "imageUrl": "kid-suitcase-3.png",
+      "category": "kids' luggage",
+      "color": "yellow",
+      "size": "S",
+      "salesStatus": true,
+      "rating": 4.0,
+      "popularity": 73,
+      "blocks": [],
+      "thumbnails": [
+        "suitcase-small-2.png",
+        "suitcase-small-card-1.png",
+        "yellow-open1.png"
+      ]
+    },
+    {
+      "id": "KL014",
+      "name": "Luxury Compact Kids' Luggage",
+      "price": 250,
+      "imageUrl": "kid-suitcase-4.png",
+      "category": "kids' luggage",
+      "color": "blue",
+      "size": "M",
+      "salesStatus": false,
+      "rating": 4.2,
+      "popularity": 78,
+      "blocks": [],
+      "thumbnails": [
+        "suitcase-small-2.png",
+        "suitcase-small-card-1.png",
+        "yellow-open1.png"
+      ]
+    },
+    {
+      "id": "KL015",
+      "name": "Urban Traveler Kids' Rolling Luggage",
+      "price": 220,
+      "imageUrl": "kid-suitcase-5.png",
+      "category": "kids' luggage",
+      "color": "pink",
+      "size": "S",
+      "salesStatus": true,
+      "rating": 4.5,
+      "popularity": 80,
+      "blocks": [],
+      "thumbnails": [
+        "suitcase-small-2.png",
+        "suitcase-small-card-1.png",
+        "yellow-open1.png"
+      ]
+    },
+    {
+      "id": "KL016",
+      "name": "Comfortable Travel-Friendly Kids' Luggage",
+      "price": 240,
+      "imageUrl": "kid-suitcase-2.png",
+      "category": "kids' luggage",
+      "color": "blue",
+      "size": "M",
+      "salesStatus": false,
+      "rating": 3.5,
+      "popularity": 72,
+      "blocks": [],
+      "thumbnails": [
+        "suitcase-small-2.png",
+        "suitcase-small-card-1.png",
+        "yellow-open1.png"
+      ]
+    },
+    {
+      "id": "SET017",
+      "name": "Premium Explorer Luggage Set",
+      "price": 750,
+      "imageUrl": "set-of-suitcases-black-small.png",
+      "category": "luggage sets",
+      "color": "black",
+      "size": "S, M, XL",
+      "salesStatus": true,
+      "rating": 4.5,
+      "popularity": 88,
+      "blocks": [],
+      "thumbnails": [
+        "suitcase-small-2.png",
+        "suitcase-small-card-1.png",
+        "yellow-open1.png"
+      ]
+    },
+    {
+      "id": "SET018",
+      "name": "Deluxe Family Travel Set",
+      "price": 800,
+      "imageUrl": "set-of-suitcases-blue-small.png",
+      "category": "luggage sets",
+      "color": "blue",
+      "size": "S, M, XL",
+      "salesStatus": false,
+      "rating": 5.0,
+      "popularity": 90,
+      "blocks": [],
+      "thumbnails": [
+        "suitcase-small-2.png",
+        "suitcase-small-card-1.png",
+        "yellow-open1.png"
+      ]
+    },
+    {
+      "id": "CO019",
+      "name": "Lightweight Compact Luggage Set",
+      "price": 230,
+      "imageUrl": "set-of-suitcases-green-small.png",
+      "category": "luggage sets",
+      "color": "green",
+      "size": "S",
+      "salesStatus": true,
+      "rating": 4.0,
+      "popularity": 75,
+      "blocks": [],
+      "thumbnails": [
+        "suitcase-small-2.png",
+        "suitcase-small-card-1.png",
+        "yellow-open1.png"
+      ]
+    },
+    {
+      "id": "CO020",
+      "name": "Explorer Rolling Carry-On Pro",
+      "price": 250,
+      "imageUrl": "suitcase-small-card-1.png",
+      "category": "carry-ons",
+      "color": "yellow",
+      "size": "M",
+      "salesStatus": false,
+      "rating": 4.2,
+      "popularity": 78,
+      "blocks": [],
+      "thumbnails": [
+        "suitcase-small-2.png",
+        "suitcase-small-card-1.png",
+        "yellow-open1.png"
+      ]
+    }
+  ]
+}

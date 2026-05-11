@@ -1,0 +1,124 @@
+// =============================================================
+// _product-card.scss
+// =============================================================
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+// ---- PRODUCT CARD ----
+.product-card {
+  border-radius: v.$radius-md;
+  overflow: hidden;
+  background: v.$color-white;
+  box-shadow: v.$shadow-sm;
+  transition: box-shadow v.$transition-base, transform v.$transition-base;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: v.$shadow-md;
+    transform: translateY(-4px);
+
+    .product-card__img {
+      transform: scale(1.06);
+    }
+  }
+}
+
+.product-card__img-wrap {
+  overflow: hidden;
+  height: 220px;
+  position: relative;
+
+  @include m.mobile {
+    height: 110px;
+  }
+}
+
+.product-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform v.$transition-slow;
+}
+
+.product-card__body {
+  padding: v.$spacing-md;
+
+  @include m.mobile {
+    padding: v.$spacing-sm;
+  }
+}
+
+.product-card__name {
+  font-size: v.$font-size-base;
+  font-weight: 600;
+  margin-bottom: v.$spacing-xs;
+
+  @include m.truncate;
+
+  @include m.mobile {
+    font-size: v.$font-size-sm;
+  }
+}
+
+.product-card__price {
+  font-size: v.$font-size-md;
+  color: v.$color-primary;
+  font-weight: 700;
+  margin-bottom: v.$spacing-sm;
+
+  @include m.mobile {
+    font-size: v.$font-size-base;
+    margin-bottom: v.$spacing-xs;
+  }
+}
+
+.product-card__rating {
+  display: flex;
+  gap: 2px;
+  margin-bottom: v.$spacing-sm;
+  color: #f4a400;
+  font-size: v.$font-size-sm;
+
+  @include m.mobile {
+    font-size: v.$font-size-xs;
+    margin-bottom: v.$spacing-xs;
+  }
+}
+
+.product-card__btn {
+  width: auto;
+  padding-left: v.$spacing-lg;
+  padding-right: v.$spacing-lg;
+}
+
+// ---- PRODUCTS GRID ----
+// Sale badge — top left of image
+
+.product-card__sale-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: v.$color-primary;
+  color: v.$color-white;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 10px;
+  z-index: 2;
+  letter-spacing: 0.5px;
+}
+
+// ---- YOU MAY ALSO LIKE — center aligned cards ----
+.products-section .product-card__body {
+  text-align: center;
+
+  .product-card__btn {
+    margin: 0 auto;
+  }
+}
+
+.products-section .product-card__name,
+.products-section .product-card__rating,
+.products-section .product-card__price {
+  text-align: center;
+  justify-content: center;
+}

@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "ESNext",
+    "outDir": "./dist/js", // Compiled JS files go here
+    "rootDir": "./src/ts", // TS source files
+    "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "ignoreDeprecations": "6.0",
+    "allowJs": false,
+    "lib": ["ES2023", "DOM"]
+  },
+  "include": [
+    "src/ts/main.ts",
+    "src/ts/home.ts",
+    "src/ts/catalog.ts",
+    "src/ts/product.ts",
+    "src/ts/cart.ts",
+    "src/ts/contact.ts",
+    "src/ts/about.ts"
+  ],
+  "exclude": ["node_modules", "dist"]
+}

@@ -1,0 +1,692 @@
+// =============================================================
+// _product-details.scss — Product Details page styles
+// =============================================================
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+// ---- PRODUCT DETAIL LAYOUT ----
+.product-detail__layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+
+  @include m.tablet {
+    gap: 32px;
+  }
+
+  @include m.mobile {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+.product-detail.section {
+  padding-top: 24px;
+}
+
+.products-section .product-card {
+  min-height: 569px;
+  display: flex;
+  flex-direction: column;
+
+  .product-card__img-wrap {
+    flex: 1;
+  }
+}
+
+// ---- GALLERY: main image + thumbnails ----
+// c41: one big image, four small thumbs (150×148px, ~2px gap) underneath
+.product-detail__gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.product-detail__img {
+  width: 100%;
+  display: block;
+}
+
+.product-detail__thumbs {
+  display: flex;
+  gap: 2px;
+  margin-top: 2px;
+}
+
+.product-detail__thumb {
+  flex: 1;
+  height: 148px;
+  padding: 0;
+  border: 2px solid transparent;
+  background: none;
+  cursor: pointer;
+  overflow: hidden;
+  transition: border-color v.$transition-fast;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  &.active,
+  &:hover {
+    border-color: v.$color-primary;
+  }
+
+  @include m.tablet {
+    height: 100px;
+  }
+
+  @include m.mobile {
+    height: 72px;
+  }
+}
+
+// ---- INFO PANEL ----
+
+// c42: Montserrat 700, 30px, #000
+.product-detail__name {
+  font-family: v.$font-primary;
+  font-size: 30px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 4px;
+
+  @include m.tablet {
+    font-size: 24px;
+  }
+
+  @include m.mobile {
+    font-size: 20px;
+  }
+}
+
+// Subtitle "Suitcase Pro" — sits directly under the name
+.product-detail__subtitle {
+  font-family: v.$font-primary;
+  font-size: v.$font-size-base;
+  font-weight: 400;
+  color: v.$color-grey-dark;
+  margin-bottom: v.$spacing-sm;
+}
+
+// c43: stars #F5B423, review count 13px #504E4A
+.product-detail__rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: v.$spacing-sm;
+  color: #f5b423;
+  font-size: v.$font-size-base;
+
+  .rating__count {
+    font-family: v.$font-primary;
+    font-size: 13px;
+    font-weight: 400;
+    color: v.$color-grey-dark; // #504E4A
+    margin-left: 6px;
+  }
+}
+
+// c44: Montserrat 700, 20px, #000 (not pink)
+.product-detail__price {
+  font-family: v.$font-primary;
+  font-size: 20px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: v.$spacing-md;
+
+  @include m.mobile {
+    font-size: 17px;
+  }
+}
+
+// Description paragraphs — Montserrat 400, 17px, #504E4A
+.product-detail__desc {
+  font-family: v.$font-primary;
+  font-size: 17px;
+  font-weight: 400;
+  color: v.$color-grey-dark;
+  line-height: 1.7;
+  margin-bottom: v.$spacing-md;
+
+  @include m.mobile {
+    font-size: 14px;
+  }
+}
+
+// ---- DROPDOWNS: Size / Color / Category ----
+// c46: w:612px in Figma (full-width within info col), h:35px, border 2px #E9E9ED
+.product-detail__select-group {
+  margin-bottom: v.$spacing-sm;
+}
+
+.product-detail__select-label {
+  display: block;
+  font-family: v.$font-primary;
+  font-size: 17px;
+  font-weight: 700;
+  color: v.$color-grey-dark;
+  margin-bottom: 4px;
+
+  @include m.mobile {
+    font-size: 14px;
+  }
+}
+
+.product-detail__select {
+  width: 100%;
+  height: 35px;
+  padding: 0 12px;
+  border: 2px solid #e9e9ed;
+  background-color: v.$color-white;
+  font-family: v.$font-primary;
+  font-size: 13px;
+  font-weight: 400;
+  color: v.$color-grey; // #727174 — "Choose Option" placeholder colour
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23727174' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+    border-color: v.$color-primary;
+  }
+}
+
+// ---- CTA ROW: counter [- 1 +] + ADD TO CART side by side ----
+.product-detail__cta-row {
+  display: flex;
+  align-items: center;
+  gap: v.$spacing-md;
+  margin-top: v.$spacing-lg;
+  margin-bottom: v.$spacing-md;
+
+  @include m.mobile {
+    flex-wrap: wrap;
+    gap: v.$spacing-sm;
+    justify-content: center;
+  }
+}
+
+// c45: w:130px, h:55px, border 2px #B92770
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  width: 130px;
+  height: 55px;
+  border: 2px solid v.$color-primary;
+  overflow: hidden;
+  flex-shrink: 0;
+
+  @include m.tablet {
+    width: 110px;
+    height: 48px;
+  }
+
+  @include m.mobile {
+    width: 100%;
+    height: 48px;
+  }
+
+  .qty-btn {
+    flex: 1; // − and + share space equally
+  }
+
+  .qty-input {
+    flex: 2; // number input gets more space in the middle
+  }
+}
+
+.qty-btn {
+  width: 35px;
+  min-width: 35px;
+  height: 55px;
+  flex-shrink: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: v.$color-primary;
+  background-color: v.$color-white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color v.$transition-fast;
+
+  &:hover {
+    background-color: v.$color-grey-light;
+  }
+
+  @include m.tablet {
+    height: 48px;
+  }
+
+  @include m.mobile {
+    height: 48px;
+  }
+}
+
+.qty-input {
+  width: 60px;
+  min-width: 0;
+  flex-shrink: 0;
+  height: 55px;
+  text-align: center;
+  border: none;
+  font-family: v.$font-primary;
+  font-size: v.$font-size-base;
+  font-weight: 600;
+  color: #000;
+  appearance: textfield;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    appearance: none;
+  }
+
+  @include m.tablet {
+    height: 48px;
+  }
+
+  @include m.mobile {
+    height: 48px;
+  }
+}
+
+// c46: ADD TO CART — h:55px, background #B92770, SF Pro 700 17px white
+.product-detail__add-btn {
+  height: 55px;
+  flex: 1;
+  font-size: 17px;
+  font-weight: 700;
+  color: v.$color-white;
+  background-color: v.$color-primary;
+  letter-spacing: 0.5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color v.$transition-fast;
+
+  &:hover {
+    background-color: v.$color-primary-dark;
+  }
+
+  @include m.tablet {
+    height: 48px;
+    font-size: 15px;
+  }
+
+  @include m.mobile {
+    height: 48px;
+    font-size: 15px;
+    flex-basis: 100%; // stacks below qty selector if wrapped
+  }
+}
+
+// ---- PAYMENT LOGOS ROW ----
+.product-detail__payment {
+  display: flex;
+  align-items: center;
+  gap: v.$spacing-sm;
+  margin-top: v.$spacing-sm;
+  flex-wrap: wrap;
+}
+
+.product-detail__payment-label {
+  font-family: v.$font-primary;
+  font-size: 23px;
+  font-weight: 700;
+  color: v.$color-grey; // #727174
+  flex-shrink: 0;
+
+  @include m.mobile {
+    font-size: 17px;
+  }
+}
+
+.product-detail__payment-logos {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+
+  svg {
+    display: block;
+    border-radius: 4px;
+  }
+}
+
+// ---- TABS ----
+// c47: ALL CAPS tabs, active underline #B92770
+.tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 2px solid #eee;
+  margin-bottom: v.$spacing-lg;
+  justify-content: center;
+  overflow-x: auto; // tabs scroll horizontally instead of getting clipped
+  -webkit-overflow-scrolling: touch;
+}
+
+.tab {
+  padding: v.$spacing-sm v.$spacing-lg;
+  font-family: v.$font-primary;
+  font-size: v.$font-size-sm;
+  font-weight: 700;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  cursor: pointer;
+  transition: color v.$transition-fast, border-color v.$transition-fast;
+
+  &.active,
+  &:hover {
+    color: v.$color-primary;
+    border-color: v.$color-primary;
+  }
+
+  @include m.mobile {
+    font-size: 11px;
+    padding: v.$spacing-sm v.$spacing-md;
+    letter-spacing: 0;
+    white-space: nowrap;
+  }
+}
+
+.tab-content {
+  display: none;
+  font-family: v.$font-primary;
+  font-size: 17px;
+  font-weight: 400;
+  color: v.$color-grey-dark;
+  line-height: 1.7;
+  padding: v.$spacing-md 0;
+
+  &.active {
+    display: block;
+  }
+
+  @include m.mobile {
+    font-size: 14px;
+  }
+}
+
+// ---- REVIEWS TAB: two-column layout ----//
+.reviews__layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: v.$spacing-lg;
+  align-items: start;
+
+  @include m.tablet {
+    gap: v.$spacing-md;
+  }
+
+  @include m.mobile {
+    grid-template-columns: 1fr;
+    gap: v.$spacing-md;
+  }
+}
+
+// Left column — existing reviews
+.reviews__heading {
+  font-family: v.$font-primary;
+  font-size: 17px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: v.$spacing-md;
+
+  @include m.mobile {
+    font-size: 14px;
+  }
+}
+
+.review-item {
+  margin-bottom: v.$spacing-lg;
+}
+
+.review-item__header {
+  display: flex;
+  align-items: center;
+  gap: v.$spacing-sm;
+  margin-bottom: v.$spacing-sm;
+}
+
+.review-item__avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: v.$radius-full;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.review-item__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.review-item__name {
+  font-family: v.$font-primary;
+  font-size: 17px;
+  font-weight: 700;
+  color: v.$color-grey-dark; // #504E4A
+}
+
+.review-item__date {
+  font-family: v.$font-primary;
+  font-size: 13px;
+  font-weight: 400;
+  color: v.$color-grey; // #727174
+}
+
+.review-item__stars {
+  color: #f5b423;
+  font-size: v.$font-size-base;
+  margin-left: auto;
+}
+
+.review-item__text {
+  font-family: v.$font-primary;
+  font-size: 17px;
+  font-weight: 400;
+  color: #000;
+  line-height: 1.7;
+
+  @include m.mobile {
+    font-size: 14px;
+  }
+}
+
+// Right column — Add Review form
+.reviews__form-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.reviews__form-heading {
+  font-family: v.$font-primary;
+  font-size: 17px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 4px;
+}
+
+.reviews__form-note {
+  font-family: v.$font-primary;
+  font-size: 13px;
+  font-weight: 400;
+  color: #000;
+  margin-bottom: v.$spacing-md;
+}
+
+.reviews__required-star {
+  color: v.$color-primary;
+}
+
+// Star rating selector — 5 clickable stars, #F5B423
+.review-stars-label {
+  display: block;
+  font-family: v.$font-primary;
+  font-size: 13px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 4px;
+}
+
+.review-stars-select {
+  display: flex;
+  gap: 4px;
+  margin-bottom: v.$spacing-sm;
+}
+
+.review-star-select {
+  font-size: 22px;
+  color: #f5b423;
+  cursor: pointer;
+  transition: color v.$transition-fast;
+  user-select: none;
+
+  &.filled {
+    color: #f5b423;
+  }
+
+  &:not(.filled) {
+    color: #ddd;
+  }
+
+  &:hover {
+    color: #f5b423;
+  }
+}
+
+// Review textarea — 606×170 equivalent, border 2px #B92770
+.review-form__textarea {
+  width: 100%;
+  height: 170px;
+  border: 2px solid v.$color-primary !important; // #B92770
+  resize: vertical;
+  font-family: v.$font-primary;
+  font-size: 13px;
+  font-weight: 400;
+  color: v.$color-grey; // placeholder colour #727174
+  padding: 12px;
+
+  &::placeholder {
+    color: v.$color-grey;
+  }
+}
+
+// Name + email inputs — 293×40 side by side, border 2px #B92770
+.review-form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: v.$spacing-sm;
+
+  @include m.mobile {
+    grid-template-columns: 1fr;
+  }
+
+  .form__group {
+    margin-bottom: 0;
+  }
+
+  .form__input {
+    height: 40px;
+    border: 2px solid v.$color-primary !important; // #B92770
+    font-family: v.$font-primary;
+    font-size: 13px;
+    color: v.$color-grey-dark;
+
+    &::placeholder {
+      color: v.$color-grey-dark; // #504E4A
+    }
+  }
+}
+
+// Save details checkbox row
+.review-form__checkbox-row {
+  display: flex;
+  align-items: flex-start;
+  gap: v.$spacing-sm;
+  margin-bottom: v.$spacing-md;
+
+  input[type="checkbox"] {
+    width: 14px;
+    height: 14px;
+    margin-top: 2px;
+    border: 2px solid v.$color-grey; // #727174
+    flex-shrink: 0;
+    accent-color: v.$color-primary;
+    cursor: pointer;
+  }
+
+  label {
+    font-family: v.$font-primary;
+    font-size: 13px;
+    font-weight: 400;
+    color: v.$color-grey; // #727174
+    line-height: 1.5;
+    cursor: pointer;
+  }
+}
+
+// SUBMIT button — ALL CAPS, Helvetica Neue 700, 12px, white on #B92770
+.review-form__submit {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: v.$color-white;
+  background-color: v.$color-primary;
+  border: none;
+  padding: 10px 32px;
+  cursor: pointer;
+  transition: background-color v.$transition-fast;
+
+  &:hover {
+    background-color: v.$color-primary-dark;
+  }
+}
+
+// Success / error message
+.review-form__msg {
+  margin-top: v.$spacing-md;
+  font-family: v.$font-primary;
+  font-weight: 600;
+
+  &.success {
+    color: v.$color-success;
+  }
+
+  &.error {
+    color: v.$color-error;
+  }
+}
+
+// ---- YOU MAY ALSO LIKE — pink underline on section title ----
+.section__title--underline {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  &::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: v.$color-primary;
+    margin-top: 8px;
+  }
+}

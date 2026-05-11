@@ -1,0 +1,661 @@
+// =============================================================
+// _home.scss — Homepage styles (index.html)
+// =============================================================
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+// ---- GLOBAL: section subtitle (used on homepage sections) ----
+.section__subtitle {
+  font-size: v.$font-size-base;
+  color: v.$color-grey;
+  margin-top: -(v.$spacing-sm);
+  margin-bottom: v.$spacing-lg;
+
+  @include m.mobile {
+    font-size: v.$font-size-sm;
+    margin-bottom: v.$spacing-md;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+// =============================================================
+// ① HERO
+// =============================================================
+.hero {
+  background-color: v.$color-grey-light;
+  padding: 80px 0;
+
+  @include m.mobile {
+    padding: v.$spacing-lg 0;
+  }
+}
+
+.hero__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: v.$spacing-lg;
+
+  @include m.mobile {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+.hero__title {
+  font-family: v.$font-primary;
+  font-size: v.$font-size-3xl;
+  font-weight: 900;
+  color: v.$color-black;
+  line-height: 1;
+  letter-spacing: 0;
+  margin-bottom: v.$spacing-md;
+
+  @include m.tablet {
+    font-size: v.$font-size-2xl;
+  }
+
+  @include m.mobile {
+    font-size: v.$font-size-lg;
+  }
+}
+
+.hero__subtitle {
+  font-size: v.$font-size-base;
+  color: v.$color-grey-dark;
+  font-weight: 400;
+  line-height: 1.6;
+  margin-bottom: v.$spacing-lg;
+  max-width: 480px;
+
+  @include m.mobile {
+    font-size: v.$font-size-sm;
+    max-width: 100%;
+    margin-bottom: v.$spacing-md;
+  }
+}
+
+.hero__image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    max-height: 500px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  @include m.mobile {
+    display: none;
+  }
+}
+
+// =============================================================
+// ② HERO BANNER (CMO card + 25% Discount)
+// =============================================================
+.hero-banner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1100px;
+  height: 566px;
+  margin: 0 auto;
+  margin-top: -60px;
+  position: relative;
+  z-index: 2;
+  box-shadow: v.$shadow-md;
+  overflow: hidden;
+
+  @include m.mobile {
+    grid-template-columns: 1fr;
+    height: auto;
+    margin-top: 0;
+  }
+}
+
+// --- Left: CMO white card ---
+.hero-banner__cmo {
+  background-color: v.$color-white;
+  padding: 48px 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @include m.mobile {
+    padding: v.$spacing-md;
+  }
+}
+
+.hero-banner__cmo-header {
+  display: flex;
+  align-items: center;
+  gap: v.$spacing-md;
+  margin-bottom: v.$spacing-md;
+}
+
+.hero-banner__avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: v.$radius-full;
+  object-fit: cover;
+  flex-shrink: 0;
+
+  @include m.mobile {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+.hero-banner__name {
+  font-family: v.$font-primary;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: v.$color-black;
+  line-height: 1.2;
+
+  @include m.mobile {
+    font-size: v.$font-size-base;
+  }
+}
+
+.hero-banner__role {
+  font-size: v.$font-size-base;
+  font-weight: 400;
+  color: v.$color-black;
+
+  @include m.mobile {
+    font-size: v.$font-size-sm;
+  }
+}
+
+.hero-banner__heading {
+  font-family: v.$font-primary;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: v.$color-black;
+  line-height: 1.1;
+  margin-bottom: v.$spacing-md;
+
+  @include m.tablet {
+    font-size: v.$font-size-xl;
+  }
+
+  @include m.mobile {
+    font-size: v.$font-size-lg;
+    margin-bottom: v.$spacing-sm;
+  }
+}
+
+.hero-banner__text {
+  font-size: v.$font-size-base;
+  color: v.$color-grey-dark;
+  line-height: 1.6;
+  margin-bottom: v.$spacing-sm;
+
+  @include m.mobile {
+    font-size: v.$font-size-sm;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// --- Right: Discount image panel ---
+.hero-banner__discount {
+  position: relative;
+  overflow: hidden;
+  min-height: 300px;
+}
+
+.hero-banner__bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-banner__discount-content {
+  position: relative;
+  z-index: 1;
+  padding: 32px 24px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background: rgb(0 0 0 / 45%);
+
+  @include m.mobile {
+    padding: v.$spacing-lg v.$spacing-md;
+    align-items: center;
+    text-align: center;
+  }
+
+  .btn {
+    align-self: flex-start;
+
+    @include m.mobile {
+      align-self: center;
+    }
+  }
+}
+
+.hero-banner__discount-title {
+  font-family: v.$font-primary;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: v.$color-white;
+  line-height: 1.1;
+  margin-bottom: v.$spacing-md;
+
+  @include m.mobile {
+    font-size: v.$font-size-xl;
+    margin-bottom: v.$spacing-sm;
+  }
+}
+
+.hero-banner__discount-text {
+  font-size: v.$font-size-base;
+  color: v.$color-white;
+  line-height: 1.6;
+  margin-bottom: v.$spacing-lg;
+  max-width: 360px;
+
+  @include m.mobile {
+    font-size: v.$font-size-sm;
+    margin-bottom: v.$spacing-md;
+  }
+}
+
+// =============================================================
+// PRODUCT GRIDS (Selected + New Arrivals)
+// =============================================================
+.products__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+
+  @include m.tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include m.mobile {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+// Section titles for product sections
+.products-section .section__title {
+  @include m.mobile {
+    font-size: v.$font-size-md;
+  }
+}
+
+// =============================================================
+// ③ TRAVEL SUITCASES SLIDER
+// =============================================================
+.travel-suitcases {
+  padding-top: 60px;
+  padding-bottom: v.$spacing-sm;
+
+  .container {
+    margin-bottom: v.$spacing-sm;
+  }
+
+  .section__title {
+    @include m.mobile {
+      font-size: v.$font-size-md;
+    }
+  }
+}
+
+.travel-suitcases__slider {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 56px;
+  box-sizing: border-box;
+
+  @include m.mobile {
+    padding: 0 40px;
+  }
+}
+
+.travel-suitcases__track {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  transition: none;
+
+  @include m.tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include m.mobile {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+}
+
+.travel-card {
+  position: relative;
+  overflow: hidden;
+  height: 600px;
+  cursor: pointer;
+
+  @include m.mobile {
+    height: 220px;
+  }
+
+  &:hover .travel-card__img {
+    transform: scale(1.08);
+    filter: brightness(0.75);
+  }
+
+  &:hover {
+    box-shadow: v.$shadow-lg;
+  }
+}
+
+.travel-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform v.$transition-slow, filter v.$transition-slow;
+  display: block;
+}
+
+.travel-card__overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: v.$spacing-md v.$spacing-sm;
+  background: linear-gradient(to top, rgb(0 0 0 / 70%) 0%, transparent 100%);
+}
+
+.travel-card__title {
+  font-family: v.$font-primary;
+  font-size: v.$font-size-sm;
+  font-weight: 700;
+  color: v.$color-white;
+  margin-bottom: v.$spacing-xs;
+  line-height: 1.3;
+}
+
+.travel-card__text {
+  font-size: v.$font-size-xs;
+  color: rgb(255 255 255 / 85%);
+  line-height: 1.5;
+
+  @include m.mobile {
+    display: none; // hide body text on mobile, too cramped
+  }
+}
+
+.travel-suitcases__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: v.$color-primary;
+  color: v.$color-white;
+  border: none;
+  width: 36px;
+  height: 36px;
+  font-size: 1rem;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color v.$transition-fast;
+
+  &:hover {
+    background-color: v.$color-primary-dark;
+  }
+
+  &--prev {
+    left: 4px;
+  }
+
+  &--next {
+    right: 4px;
+  }
+}
+
+// =============================================================
+// ④ OFFER OF THE MONTH BANNER
+// =============================================================
+.offer-banner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.offer-banner__inner {
+  background-image: url("../../../src/assets/images/offer-of-the-month-image.png");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 407px;
+  display: flex;
+  align-items: center;
+  padding: 0 v.$spacing-lg;
+  box-shadow: 0 20px 80px 0 rgb(193 199 212 / 70%);
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgb(0 0 0 / 45%);
+    z-index: 0;
+  }
+
+  @include m.mobile {
+    height: auto;
+    padding: v.$spacing-lg v.$spacing-md;
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.offer-banner__text {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  width: 100%;
+
+  @include m.mobile {
+    flex-direction: column;
+    gap: v.$spacing-sm;
+    align-items: center;
+  }
+}
+
+.offer-banner__percent {
+  font-family: v.$font-primary;
+  font-size: 223px;
+  font-weight: 900;
+  color: v.$color-white;
+  line-height: 0.85;
+  flex-shrink: 0;
+
+  @include m.tablet {
+    font-size: 8rem;
+  }
+
+  @include m.mobile {
+    font-size: 5rem;
+  }
+}
+
+.offer-banner__extra-text {
+  font-family: v.$font-primary;
+  font-size: 16px;
+  font-weight: 400;
+  color: v.$color-white;
+  margin-top: v.$spacing-sm;
+  line-height: 1.4;
+  white-space: nowrap;
+
+  @include m.mobile {
+    font-size: v.$font-size-sm;
+    white-space: normal;
+    text-align: center;
+  }
+}
+
+.offer-banner__right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  @include m.mobile {
+    align-items: center;
+  }
+}
+
+.offer-banner__title {
+  font-family: v.$font-primary;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: v.$color-white;
+  margin-bottom: v.$spacing-md;
+  line-height: 1.1;
+
+  @include m.mobile {
+    font-size: v.$font-size-lg;
+    margin-bottom: v.$spacing-sm;
+    text-align: center;
+  }
+}
+
+.offer-banner__subtitle {
+  font-size: 1.0625rem;
+  color: rgb(255 255 255 / 90%);
+  margin-bottom: v.$spacing-lg;
+  line-height: 1.6;
+  max-width: 380px;
+
+  @include m.mobile {
+    font-size: v.$font-size-sm;
+    margin-bottom: v.$spacing-md;
+    text-align: center;
+  }
+}
+
+// =============================================================
+// ⑤ GRATEFUL CUSTOMERS / TESTIMONIALS
+// =============================================================
+.testimonials {
+  background: v.$color-white;
+  padding-top: 40px;
+  padding-bottom: 80px;
+
+  @include m.mobile {
+    padding-top: v.$spacing-lg;
+    padding-bottom: v.$spacing-lg;
+  }
+}
+
+.testimonials .section__title {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 900;
+  color: v.$color-black;
+  margin-bottom: 16px;
+
+  @include m.mobile {
+    font-size: v.$font-size-md;
+  }
+}
+
+.testimonials .section__subtitle {
+  text-align: center;
+  color: v.$color-grey;
+  font-size: v.$font-size-base;
+  font-weight: 400;
+  margin-bottom: 60px;
+
+  @include m.mobile {
+    font-size: v.$font-size-sm;
+    margin-bottom: v.$spacing-lg;
+  }
+}
+
+.testimonials__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 350px);
+  gap: 20px;
+  justify-content: center;
+
+  @include m.tablet {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  @include m.mobile {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+    gap: v.$spacing-md;
+  }
+}
+
+.testimonial-card {
+  background: v.$color-white;
+  box-shadow: 0 20px 80px 0 rgb(193 199 212 / 70.2%);
+  padding: 48px 32px 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  @include m.mobile {
+    padding: v.$spacing-md;
+    gap: v.$spacing-sm;
+  }
+
+  &__avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+
+    @include m.mobile {
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  &__text {
+    color: v.$color-grey-dark;
+    font-size: v.$font-size-base;
+    font-weight: 400;
+    line-height: 1.7;
+
+    @include m.mobile {
+      font-size: v.$font-size-sm;
+    }
+  }
+
+  &__name {
+    color: v.$color-primary;
+    font-weight: 700;
+    font-size: v.$font-size-base;
+
+    @include m.mobile {
+      font-size: v.$font-size-sm;
+    }
+  }
+}

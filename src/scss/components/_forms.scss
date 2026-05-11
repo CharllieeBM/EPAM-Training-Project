@@ -1,0 +1,513 @@
+// =============================================================
+// _forms.scss
+// =============================================================
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.form__group {
+  display: flex;
+  flex-direction: column;
+  gap: v.$spacing-xs;
+  margin-bottom: v.$spacing-md;
+
+  label {
+    font-size: v.$font-size-sm;
+    font-weight: 600;
+    color: v.$color-grey-dark;
+  }
+
+  input,
+  textarea,
+  select {
+    padding: 10px 14px;
+    border: 1.5px solid #ddd;
+    border-radius: v.$radius-sm;
+    font-size: v.$font-size-base;
+    transition: border-color v.$transition-fast;
+    background-color: v.$color-white;
+
+    &:focus {
+      outline: none;
+      border-color: v.$color-primary;
+    }
+
+    &.error {
+      border-color: v.$color-error;
+    }
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+}
+
+.form__error {
+  font-size: v.$font-size-xs;
+  color: v.$color-error;
+  min-height: 18px;
+}
+
+.input-icon-wrap {
+  position: relative;
+
+  input {
+    width: 100%;
+    padding-right: 44px;
+  }
+
+  .btn-eye {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: v.$color-grey;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      color: v.$color-primary;
+    }
+  }
+}
+
+.select {
+  padding: 8px 12px;
+  border: 1.5px solid #ddd;
+  border-radius: v.$radius-sm;
+  background-color: v.$color-white;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+    border-color: v.$color-primary;
+  }
+}
+
+// ── Modal ─────────────────────────────────────────────────────
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  padding: 0;
+  border: none;
+  background: transparent;
+
+  &[aria-hidden="false"] {
+    display: flex;
+  }
+}
+
+.modal__overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgb(0 0 0 / 50%);
+}
+
+.modal__box {
+  position: relative;
+  z-index: 1;
+  background-color: v.$color-white;
+  padding: 40px;
+  width: 100%;
+  max-width: 450px; // wide enough to hold 340px input + padding
+  box-shadow: v.$shadow-lg;
+
+  @include m.mobile {
+    margin: v.$spacing-md;
+    padding: v.$spacing-lg;
+  }
+}
+
+.modal__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 1.5rem;
+  color: v.$color-grey;
+  cursor: pointer;
+
+  &:hover {
+    color: v.$color-black;
+  }
+}
+
+.modal__title {
+  font-family: v.$font-primary;
+  font-size: v.$font-size-lg;
+  font-weight: 700;
+  margin-bottom: v.$spacing-lg;
+  color: v.$color-black;
+}
+
+// Labels — Montserrat 400, 14px, #000
+// Required asterisk — red
+
+.modal__form {
+  .form__label {
+    font-family: v.$font-primary;
+    font-size: 14px;
+    font-weight: 400;
+    color: #000;
+  }
+
+  .form__group {
+    margin-bottom: 2px; // overrides the global $spacing-md for modal only
+  }
+
+  .form__group:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .form__input-wrap,
+  .form__group {
+    width: 380px;
+
+    @include m.mobile {
+      width: 100%;
+    }
+  }
+}
+
+.form__required {
+  color: v.$color-primary; // red asterisk — #B92770
+  margin-left: 2px;
+}
+
+// Inputs — 340×40px, border 2px #B92770
+.modal__input {
+  width: 380px;
+  height: 40px;
+  padding: 0 12px;
+  border: 2px solid v.$color-primary !important;
+  background-color: v.$color-white;
+  font-family: v.$font-primary;
+  font-size: 14px;
+  font-weight: 400;
+  color: #000;
+  transition: border-color v.$transition-fast;
+
+  &:focus {
+    outline: none;
+    border-color: v.$color-primary !important;
+  }
+
+  &.error {
+    border-color: v.$color-error !important;
+  }
+
+  @include m.mobile {
+    width: 100%;
+  }
+}
+
+// Password field eye-toggle wrapper
+.form__input-wrap {
+  position: relative;
+  width: fit-content;
+
+  @include m.mobile {
+    width: 100%;
+  }
+
+  .form__eye {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: v.$color-grey;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 0;
+
+    &:hover {
+      color: v.$color-primary;
+    }
+  }
+}
+
+// Remember me + Forgot password row
+// Remember me left, Forgot your password right — both 9px to match Figma
+.modal__meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding-top: 0;
+
+  @include m.mobile {
+    width: 100%;
+  }
+}
+
+.modal__remember {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: v.$font-primary;
+  font-size: v.$font-size-sm;
+  font-weight: 400;
+  color: #000;
+  cursor: pointer;
+
+  input[type="checkbox"] {
+    width: 14px;
+    height: 14px;
+    accent-color: v.$color-primary;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+}
+
+.modal__forgot {
+  font-family: v.$font-primary;
+  font-size: v.$font-size-sm;
+  font-weight: 700;
+  color: v.$color-primary;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.modal__submit {
+  width: 380px;
+  height: 40px;
+  background-color: v.$color-primary;
+  color: v.$color-white;
+  font-family: v.$font-primary;
+  font-size: v.$font-size-base;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color v.$transition-fast;
+
+  &:hover {
+    background-color: v.$color-primary-dark;
+  }
+
+  @include m.mobile {
+    width: 100%;
+  }
+}
+
+// =============================================================
+// CONTACT SECTION — feedback form layout
+// =============================================================
+
+.contact-section {
+  padding: 40px 0 80px;
+  background: v.$color-white;
+}
+
+.contact-section__inner {
+  display: flex;
+  align-items: flex-start;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 v.$spacing-md;
+
+  @include m.tablet {
+    flex-direction: column;
+    padding: 0 v.$spacing-md;
+  }
+
+  @include m.mobile {
+    flex-direction: column;
+    padding: 0 v.$spacing-md;
+  }
+}
+
+// Left: tall image
+.contact-section__image {
+  flex: 0 0 520px;
+
+  @include m.tablet {
+    flex: 0 0 auto;
+    width: 95%;
+  }
+
+  @include m.mobile {
+    display: none;
+  }
+
+  img {
+    width: 627px;
+    height: 700px;
+    object-fit: cover;
+    display: block;
+
+    @include m.tablet {
+      width: 100%;
+      height: 300px;
+      margin-left: 20px;
+    }
+  }
+}
+
+// Right: form column
+.contact-section__form {
+  flex: 0 0 560px;
+  padding-left: 48px;
+  padding-top: 4px;
+
+  @include m.tablet {
+    flex: 1;
+    padding-left: v.$spacing-md;
+    padding-top: v.$spacing-md;
+  }
+
+  @include m.mobile {
+    flex: 1;
+    padding-left: v.$spacing-sm;
+    padding-top: v.$spacing-sm;
+  }
+}
+
+.contact-form__title {
+  font-family: v.$font-primary;
+  font-size: 25px;
+  font-weight: 700;
+  color: v.$color-black;
+  margin-bottom: v.$spacing-md;
+  line-height: 1.3;
+
+  @include m.mobile {
+    font-size: 20px;
+  }
+}
+
+.contact-form__subtitle {
+  font-family: v.$font-primary;
+  font-size: v.$font-size-base;
+  font-weight: 400;
+  color: v.$color-black;
+  margin-bottom: v.$spacing-lg;
+  line-height: 1.6;
+
+  @include m.mobile {
+    font-size: 14px;
+  }
+}
+
+// Individual field wrapper
+.contact-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: v.$spacing-sm;
+}
+
+.contact-field__label {
+  font-family: v.$font-primary;
+  font-size: 18px;
+  font-weight: 700;
+  color: v.$color-black;
+  margin-bottom: v.$spacing-xs;
+
+  @include m.mobile {
+    font-size: 14px;
+  }
+}
+
+.contact-field__required {
+  color: v.$color-error; // red asterisk
+  margin-left: 2px;
+}
+
+// Short inputs (name, email, topic)
+.contact-field__input {
+  width: 100%;
+  height: 44px;
+  padding: 0 12px;
+  border: 2px solid rgb(185 39 112 / 50%);
+  background-color: v.$color-white;
+  font-family: v.$font-primary;
+  font-size: v.$font-size-base;
+  font-weight: 400;
+  color: v.$color-black;
+  transition: border-color v.$transition-fast;
+
+  &:focus {
+    outline: none;
+    border-color: v.$color-primary;
+  }
+
+  &.error {
+    border-color: v.$color-error;
+  }
+
+  @include m.tablet {
+    width: 100%;
+  }
+
+  @include m.mobile {
+    width: 100%;
+  }
+}
+
+// Textarea override (message field)
+.contact-field__textarea {
+  height: 119px;
+  padding: 12px;
+  resize: vertical;
+}
+
+// Error message span
+.contact-field__error {
+  font-family: v.$font-primary;
+  font-size: v.$font-size-xs;
+  color: v.$color-error;
+  min-height: 18px;
+  margin-top: 2px;
+}
+
+// SEND button — 90×40, #B92770, white text
+.contact-form__btn {
+  width: 90px;
+  height: 40px;
+  background-color: v.$color-primary;
+  color: v.$color-white;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color v.$transition-fast;
+  margin-top: v.$spacing-sm;
+
+  &:hover {
+    background-color: v.$color-primary-dark;
+  }
+}
+
+// Success / error message after submit
+.contact__form-msg {
+  margin-top: v.$spacing-md;
+  font-family: v.$font-primary;
+  font-size: v.$font-size-base;
+  font-weight: 400;
+  min-height: 24px;
+
+  &.success {
+    color: v.$color-success;
+  }
+
+  &.error {
+    color: v.$color-error;
+  }
+}

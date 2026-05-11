@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Details — Best Shop</title>
+  <link rel="stylesheet" href="../../dist/css/main.css" />
+</head>
+
+<body>
+
+  <!-- ================================================
+       HEADER 
+  ================================================ -->
+  <header class="header">
+    <div class="header__top container">
+      <button class="nav__burger" id="burger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="header__social">
+        <a href="https://www.facebook.com/" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="18" height="18">
+            <path
+              d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z" />
+          </svg>
+        </a>
+        <a href="https://x.com/" aria-label="Twitter / X">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="18" height="18">
+            <path
+              d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z" />
+          </svg>
+        </a>
+        <a href="https://www.instagram.com/" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="22" height="22">
+            <path
+              d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
+          </svg>
+        </a>
+      </div>
+
+      <a href="../index.html" class="nav__logo">
+        <img src="../assets/images/luggage-icon.png" alt="" width="35" height="35" />
+        BEST SHOP
+      </a>
+
+      <div class="nav__icons">
+        <button class="btn-icon btn-account-desktop" id="btn-account" aria-label="Account">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor">
+            <circle cx="12" cy="8" r="4" stroke-width="2" />
+            <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </button>
+        <a href="../html/cart.html" class="btn-icon btn-cart" aria-label="Cart">
+          <img src="../assets/images/shopping-cart.png" alt="" width="22" height="22" class="cart-icon-img" />
+          <span class="cart-count" id="cart-count">0</span>
+        </a>
+
+      </div>
+    </div>
+
+    <nav class="header__nav container" aria-label="Main navigation">
+      <ul class="nav__links" id="nav-links">
+        <li><a href="../index.html" class="nav__link">Home</a></li>
+        <li><a href="./catalog.html" class="nav__link">Catalog</a></li>
+        <li><a href="./about.html" class="nav__link">About Us</a></li>
+        <li><a href="./contact.html" class="nav__link">Contact Us</a></li>
+        <!-- Mobile only extras -->
+        <li class="nav__mobile-divider"></li>
+        <li class="nav__mobile-social">
+          <a href="https://www.facebook.com/" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="22" height="22">
+              <path
+                d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z" />
+            </svg>
+          </a>
+          <a href="https://x.com/" aria-label="Twitter / X">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="22" height="22">
+              <path
+                d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z" />
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="22" height="22">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
+            </svg>
+          </a>
+        </li>
+        <li>
+          <button class="nav__mobile-login" id="btn-account-mobile" aria-label="Log In">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <circle cx="12" cy="8" r="4" stroke-width="2" />
+              <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke-width="2" stroke-linecap="round" />
+            </svg>
+            Log In
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ================================================
+       MAIN CONTENT
+  ================================================ -->
+  <main>
+
+    <!-- Page Banner / Breadcrumb -->
+    <!-- product-breadcrumb span updated dynamically by product.ts -->
+    <section class="page-banner">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a> &rsaquo;
+          <a href="./catalog.html">Catalog</a> &rsaquo;
+          <span id="product-breadcrumb">Product</span>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ================================================
+         PRODUCT DETAIL
+         All dynamic fields populated by product.ts
+         from data.json, using ?id= query param
+    ================================================ -->
+    <section class="product-detail section">
+      <div class="container">
+        <div class="product-detail__layout">
+
+          <!-- Left: product image + thumbnails -->
+          <div class="product-detail__gallery">
+            <img class="product-detail__img" id="product-img" src="" alt="Product" />
+            <!-- 4 small thumbnail previews — populated/swapped by product.ts -->
+            <div class="product-detail__thumbs" id="product-thumbs">
+              <button class="product-detail__thumb active" data-index="0" aria-label="View image 1">
+                <img src="" alt="Thumbnail 1" />
+              </button>
+              <button class="product-detail__thumb" data-index="1" aria-label="View image 2">
+                <img src="" alt="Thumbnail 2" />
+              </button>
+              <button class="product-detail__thumb" data-index="2" aria-label="View image 3">
+                <img src="" alt="Thumbnail 3" />
+              </button>
+              <button class="product-detail__thumb" data-index="3" aria-label="View image 4">
+                <img src="" alt="Thumbnail 4" />
+              </button>
+            </div>
+          </div>
+
+          <!-- Right: product info -->
+          <div class="product-detail__info">
+
+            <!-- Product name + subtitle -->
+            <h1 class="product-detail__name" id="product-name">Loading…</h1>
+            <p class="product-detail__subtitle">Suitcase Pro</p>
+
+            <!-- Star rating + review count — rendered by product.ts -->
+            <div class="product-detail__rating" id="product-rating" aria-label="Product rating">
+              <!-- product.ts injects stars + "(1 Client Review)" span -->
+            </div>
+
+            <!-- Price -->
+            <p class="product-detail__price" id="product-price"></p>
+
+            <!-- Description paragraphs (static Figma copy) -->
+            <p class="product-detail__desc">
+              The new Global Explorer Max Comfort Suitcase Pro is a bold reimagining of travel essentials, designed to
+              elevate every journey. Made with at least 30% recycled materials, its lightweight yet impact-resistant
+              shell
+              combines eco-conscious innovation with rugged durability.
+            </p>
+            <p class="product-detail__desc">
+              The ergonomic handle and GlideMotion spinner wheels ensure effortless mobility while making a statement in
+              sleek design. Inside, the modular compartments and adjustable straps keep your belongings secure and
+              neatly
+              organized, no matter the destination.
+            </p>
+
+            <!-- Dropdowns: Size / Color / Category -->
+            <div class="product-detail__select-group">
+              <label class="product-detail__select-label" for="select-size">Size</label>
+              <select class="product-detail__select" id="select-size" name="size">
+                <option value="" disabled selected>Choose Option</option>
+                <option value="cabin">Cabin</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+                <option value="set">Set</option>
+              </select>
+            </div>
+
+            <div class="product-detail__select-group">
+              <label class="product-detail__select-label" for="select-color">Color</label>
+              <select class="product-detail__select" id="select-color" name="color">
+                <option value="" disabled selected>Choose Option</option>
+                <option value="black">Black</option>
+                <option value="blue">Blue</option>
+                <option value="red">Red</option>
+                <option value="green">Green</option>
+                <option value="pink">Pink</option>
+                <option value="yellow">Yellow</option>
+              </select>
+            </div>
+
+            <div class="product-detail__select-group">
+              <label class="product-detail__select-label" for="select-category">Category</label>
+              <select class="product-detail__select" id="select-category" name="category">
+                <option value="" disabled selected>Choose Option</option>
+                <option value="adult">Adult</option>
+                <option value="kids">Kids</option>
+                <option value="sets">Sets</option>
+              </select>
+            </div>
+
+            <!-- Counter + Add to Cart — side by side per Figma -->
+            <div class="product-detail__cta-row">
+              <!-- Quantity selector — min 1, enforced by product.ts -->
+              <div class="quantity-selector" aria-label="Quantity">
+                <button class="qty-btn" id="qty-minus" aria-label="Decrease quantity">&#8722;</button>
+                <input class="qty-input" type="number" id="qty-input" value="1" min="1" readonly />
+                <button class="qty-btn" id="qty-plus" aria-label="Increase quantity">&#43;</button>
+              </div>
+
+              <!-- Add to Cart — updates header counter + LocalStorage -->
+              <button class="btn btn--primary product-detail__add-btn" id="add-to-cart-btn">
+                ADD TO CART
+              </button>
+            </div>
+
+            <!-- Payment logos row -->
+            <div class="product-detail__payment">
+              <span class="product-detail__payment-label">Payment:</span>
+              <div class="product-detail__payment-logos">
+                <!-- Visa -->
+                <svg width="52" height="32" viewBox="0 0 52 32" xmlns="http://www.w3.org/2000/svg" aria-label="Visa">
+                  <rect width="52" height="32" rx="4" fill="#f4f4f4" />
+                  <text x="26" y="22" font-family="Arial" font-weight="900" font-size="14" fill="#999"
+                    text-anchor="middle" letter-spacing="1">VISA</text>
+                </svg>
+                <!-- American Express -->
+                <svg width="52" height="32" viewBox="0 0 52 32" xmlns="http://www.w3.org/2000/svg"
+                  aria-label="American Express">
+                  <rect width="52" height="32" rx="4" fill="#f4f4f4" />
+                  <text x="26" y="14" font-family="Arial" font-weight="700" font-size="8" fill="#999"
+                    text-anchor="middle">AMERICAN</text>
+                  <text x="26" y="24" font-family="Arial" font-weight="700" font-size="8" fill="#999"
+                    text-anchor="middle">EXPRESS</text>
+                </svg>
+                <!-- Mastercard -->
+                <svg width="52" height="32" viewBox="0 0 52 32" xmlns="http://www.w3.org/2000/svg"
+                  aria-label="Mastercard">
+                  <rect width="52" height="32" rx="4" fill="#f4f4f4" />
+                  <circle cx="20" cy="16" r="9" fill="#bbb" />
+                  <circle cx="32" cy="16" r="9" fill="#999" />
+                  <path d="M26 9a9 9 0 010 14 9 9 0 010-14z" fill="#aaa" />
+                </svg>
+                <!-- PayPal -->
+                <svg width="52" height="32" viewBox="0 0 52 32" xmlns="http://www.w3.org/2000/svg" aria-label="PayPal">
+                  <rect width="52" height="32" rx="4" fill="#f4f4f4" />
+                  <text x="26" y="22" font-family="Arial" font-weight="700" font-size="13" fill="#999"
+                    text-anchor="middle">PayPal</text>
+                </svg>
+              </div>
+
+            </div>
+
+          </div>
+          <!-- /product-detail__info -->
+
+        </div>
+        <!-- /product-detail__layout -->
+      </div>
+    </section>
+
+    <!-- ================================================
+         TABS: Details / Reviews / Shipping Policy
+         product.ts handles tab switching + review submit
+    ================================================ -->
+    <section class="product-tabs section">
+      <div class="container">
+
+        <div class="tabs" role="tablist">
+          <button class="tab active" role="tab" aria-selected="true" aria-controls="tab-details"
+            data-tab="details">DETAILS</button>
+          <button class="tab" role="tab" aria-selected="false" aria-controls="tab-reviews"
+            data-tab="reviews">REVIEWS</button>
+          <button class="tab" role="tab" aria-selected="false" aria-controls="tab-shipping" data-tab="shipping">SHIPPING
+            POLICY</button>
+        </div>
+
+        <!-- Details tab (was Description) -->
+        <div class="tab-content active" id="tab-details" role="tabpanel">
+          <p id="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut
+            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+            est
+            laborum.</p>
+        </div>
+
+        <!-- Reviews tab — two-column layout -->
+        <div class="tab-content" id="tab-reviews" role="tabpanel">
+          <div class="reviews__layout">
+
+            <!-- LEFT: existing review(s) -->
+            <div class="reviews__existing">
+              <h3 class="reviews__heading">1 review for Global Explorer Max Comfort Suitcase Pro</h3>
+
+              <div class="review-item">
+                <div class="review-item__header">
+                  <img class="review-item__avatar" src="../assets/images/review-customer.png" alt="Customer" />
+                  <div class="review-item__meta">
+                    <span class="review-item__name">Alexa Johnson</span>
+                    <span class="review-item__date">January 15, 2025</span>
+                  </div>
+                  <!-- 4 filled stars -->
+                  <div class="review-item__stars" aria-label="4 out of 5 stars">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
+                  </div>
+                </div>
+                <p class="review-item__text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+                  dolore magna aliqua. Excellent build quality and the wheels glide so smoothly!
+                </p>
+              </div>
+            </div>
+
+            <!-- RIGHT: Add a review form -->
+            <div class="reviews__form-col">
+              <h3 class="reviews__form-heading">Add Review</h3>
+              <p class="reviews__form-note">Your email address won't be shared with anybody. Required fields have the
+                symbol <span class="reviews__required-star">*</span></p>
+
+              <!-- Star rating selector -->
+              <div class="review-stars-select" id="review-stars" aria-label="Rate this product">
+                <span class="review-star-select" data-value="1" aria-label="1 star">☆</span>
+                <span class="review-star-select" data-value="2" aria-label="2 stars">☆</span>
+                <span class="review-star-select" data-value="3" aria-label="3 stars">☆</span>
+                <span class="review-star-select" data-value="4" aria-label="4 stars">☆</span>
+                <span class="review-star-select" data-value="5" aria-label="5 stars">☆</span>
+              </div>
+              <label class="review-stars-label" for="review-rating">Rate Product</label>
+
+              <form class="form review-form" id="review-form" novalidate>
+                <input type="hidden" id="review-rating" name="rating" value="0" />
+
+                <!-- Review textarea -->
+                <div class="form__group">
+                  <textarea class="form__input review-form__textarea" id="review-text" name="review" rows="6"
+                    placeholder="Your Review" required></textarea>
+                  <span class="form__error" id="review-text-error" aria-live="polite"></span>
+                </div>
+
+                <!-- Name + Email side by side -->
+                <div class="review-form__row">
+                  <div class="form__group">
+                    <input class="form__input" type="text" id="review-name" name="name" placeholder="Your name*"
+                      required />
+                    <span class="form__error" id="review-name-error" aria-live="polite"></span>
+                  </div>
+                  <div class="form__group">
+                    <input class="form__input" type="email" id="review-email" name="email" placeholder="Your email*"
+                      required />
+                    <span class="form__error" id="review-email-error" aria-live="polite"></span>
+                  </div>
+                </div>
+
+                <!-- Save details checkbox -->
+                <div class="review-form__checkbox-row">
+                  <input type="checkbox" id="review-save" name="save" />
+                  <label for="review-save">Save my name, email, and website in this browser for when I leave another
+                    comment.</label>
+                </div>
+
+                <!-- Submit -->
+                <button type="submit" class="btn btn--primary review-form__submit">SUBMIT</button>
+
+                <!-- Success/error message shown by product.ts without page reload -->
+                <p class="review-form__msg" id="review-msg" aria-live="polite"></p>
+              </form>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Shipping Policy tab -->
+        <div class="tab-content" id="tab-shipping" role="tabpanel">
+          <p>We offer free standard shipping on all orders over $100. Express and overnight options are available at
+            checkout. Orders are processed within 1–2 business days. International shipping is available to most
+            countries — delivery times and rates vary by destination.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================
+         YOU MAY ALSO LIKE
+         4 randomly selected products from data.json
+         populated by product.ts
+    ================================================ -->
+    <section class="products-section section section--alt" aria-labelledby="related-title">
+      <div class="container">
+        <h2 class="section__title section__title--underline" id="related-title">You May Also Like</h2>
+        <div class="products__grid" id="related-products">
+          <!-- product.ts injects 4 random product cards here -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================================================
+       FOOTER (Figma version — path-adjusted for src/html/)
+  ================================================ -->
+  <footer class="footer">
+    <!-- Benefits Bar -->
+    <div class="footer__benefits">
+      <div class="container footer__benefits-grid">
+        <h3 class="footer__benefits-heading">Our Benefits</h3>
+        <div class="footer__benefit">
+          <img src="../assets/images/travel-icon.png" alt="" width="60" height="60" />
+          <p>Free shipping on orders over $100</p>
+        </div>
+        <div class="footer__benefit">
+          <img src="../assets/images/truck-icon.png" alt="" width="60" height="60" />
+          <p>Easy 30-day returns & exchanges</p>
+        </div>
+        <div class="footer__benefit">
+          <img src="../assets/images/coins-icon.png" alt="" width="60" height="60" />
+          <p>24/7 customer support available</p>
+        </div>
+        <div class="footer__benefit">
+          <img src="../assets/images/hat-icon.png" alt="" width="60" height="60" />
+          <p>Premium quality guaranteed</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Footer -->
+    <div class="footer__main">
+      <div class="container footer__inner">
+
+        <div class="footer__col">
+          <h4 class="footer__heading">About Us</h4>
+          <ul class="footer__links">
+            <li><a href="./about.html">Organisation</a></li>
+            <li><a href="./about.html">Partners</a></li>
+            <li><a href="./about.html">Clients</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h4 class="footer__heading">Interesting Links</h4>
+          <ul class="footer__links">
+            <li><a href="./catalog.html">Photo Gallery</a></li>
+            <li><a href="./about.html">Our Team</a></li>
+            <li><a href="./contact.html">Socials</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h4 class="footer__heading">Achievements</h4>
+          <ul class="footer__links">
+            <li><a href="#">Winning Awards</a></li>
+            <li><a href="#">Press</a></li>
+            <li><a href="#">Our Amazing Clients</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col footer__col--contact">
+          <h4 class="footer__heading">Contact Us</h4>
+          <p class="footer__contact-desc">We'd love to hear from you. Reach out any time.</p>
+          <div class="footer__contact-grid">
+            <div class="footer__contact-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24"
+                stroke="#B92770" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+              </svg>
+              <span>+1 (800) 123-4567</span>
+            </div>
+            <div class="footer__contact-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24"
+                stroke="#B92770" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+              </svg>
+              <span>hello@bestshop.com</span>
+            </div>
+            <div class="footer__contact-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24"
+                stroke="#B92770" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>Mon–Fri: 10am–6pm<br />Sat–Sun: 10am–6pm</span>
+            </div>
+            <div class="footer__contact-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24"
+                stroke="#B92770" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+              </svg>
+              <span>123 Travel Lane,<br />New York, NY 10001</span>
+            </div>
+          </div>
+        </div>
+        <!-- Shipping Information -->
+        <div class="footer__shipping">
+          <h4>Shipping Information</h4>
+          <p>We offer free standard shipping on all orders over $100. Express and overnight shipping options are
+            available
+            at checkout. Orders are processed within 1–2 business days. International shipping is available to selected
+            countries — delivery times vary by destination.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Bottom Bar -->
+    <div class="footer__bottom">
+      <div class="container">
+        <p>&copy; 2025 Best Shop. All rights reserved.</p>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- ================================================
+       LOGIN MODAL (shared across all pages)
+  ================================================ -->
+  <dialog class="modal" id="login-modal" aria-labelledby="modal-title">
+    <div class="modal__overlay" id="modal-overlay"></div>
+    <div class="modal__box">
+      <button class="modal__close" id="modal-close" aria-label="Close">&times;</button>
+      <h2 class="modal__title" id="modal-title">Log In</h2>
+      <form class="form modal__form" id="login-form" novalidate>
+
+        <div class="form__group">
+          <label class="form__label" for="login-email">
+            Email address<span class="form__required">*</span>
+          </label>
+          <input class="form__input modal__input" type="email" id="login-email" name="email"
+            placeholder="you@example.com" required />
+          <span class="form__error" id="login-email-error" aria-live="polite"></span>
+        </div>
+
+        <div class="form__group">
+          <label class="form__label" for="login-password">
+            Password<span class="form__required">*</span>
+          </label>
+          <div class="form__input-wrap">
+            <input class="form__input modal__input" type="password" id="login-password" name="password"
+              placeholder="Enter password" required />
+            <button type="button" class="form__eye" id="toggle-password" aria-label="Show/hide password">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+              </svg>
+            </button>
+          </div>
+          <span class="form__error" id="login-password-error" aria-live="polite"></span>
+        </div>
+
+        <!-- Remember me (left) + Forgot your password? (right) -->
+        <div class="modal__meta-row">
+          <label class="modal__remember">
+            <input type="checkbox" id="login-remember" name="remember" />
+            Remember me
+          </label>
+          <a href="#" class="modal__forgot">Forgot your password?</a>
+        </div>
+
+        <button type="submit" class="btn btn--primary modal__submit">LOG IN</button>
+
+      </form>
+    </div>
+    </div>
+    <script type="module" src="../../dist/js/main.js" defer></script>
+    <script type="module" src="../../dist/js/product.js" defer></script>
+</body>
+
+</html>
